@@ -1,0 +1,24 @@
+<!-- https://github.com/country-regions/country-region-selector/blob/master/test.html -->
+<html>
+       <script>
+          function createAndInit() {
+            var html = '<select class="crs-country" data-region-id="one"></select>' +
+            '<select id="one"></select>';
+            document.getElementById('target').innerHTML = html;
+
+            // manually initialize
+            window.crs.init();
+          }
+          
+        </script>
+        <input type="button" value="Insert country + region selects and initialize" onclick="createAndInit()" />
+        <div id="target"></div>
+       <div>
+            Country: <select class="crs-country" data-region-id="one"></select>
+        </div>
+        <div>
+            Region: <select id="one"></select>
+        </div>    
+        <script src="crs.js"></script>    
+</html>
+

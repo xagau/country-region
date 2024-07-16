@@ -1,0 +1,51 @@
+<style>
+div {
+  margin-bottom: 10px;
+  position: relative;
+}
+
+input[type="number"] {
+  width: 100px;
+}
+
+input + span {
+  padding-right: 30px;
+}
+
+input:invalid + span::after {
+  position: absolute;
+  content: "✖";
+  padding-left: 5px;
+  color: #8b0000;
+}
+
+input:valid + span::after {
+  position: absolute;
+  content: "✓";
+  padding-left: 5px;
+  color: #009000;
+}
+
+</style>
+
+<form>
+  <div>
+    <label for="telNo">
+      Enter a telephone number (in the form +x-xxx-xxx-xxxx):
+    </label>
+    <input
+      id="telNo"
+      name="telNo"
+      type="tel"
+      value=""
+      placeholder="+1-204-555-2988"
+      required
+      pattern="^(\+|00)[1-9][0-9 \-\(\)\.]{7,32}$"/> <!-- \+(9[976]\d|8[987530]\d|6[987]\d|5[90]\d|42\d|3[875]\d|2[98654321]\d|9[8543210]|8[6421]|6[6543210]|5[87654321]|4[987654310]|3[9643210]|2[70]|7|1)\d{1,14}$"/> -->
+      <!-- pattern="[0-9]{2}-[0-9]{3}-[0-9]{3}-[0-9]{4}" /> -->
+    <span class="validity"></span>
+  </div>
+  <div>
+    <button>Submit</button>
+  </div>
+</form>
+
